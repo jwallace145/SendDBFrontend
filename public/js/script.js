@@ -4,12 +4,13 @@ $( document ).ready(function() {
     $( "#test" ).click(function() {
         console.log("that test button was clicked bruh");
 
-        const url = "https://b1rzvmzxb5.execute-api.us-east-1.amazonaws.com/dev/climbers"
+        const URL = "https://b1rzvmzxb5.execute-api.us-east-1.amazonaws.com/dev/climbers"
         $.ajax({
             url: URL,
             type: "GET",
             headers: {
-                "climber_id": "2021-06-08 18:48:55.548080T1621967203918165956"
+                "climber_id": "2021-06-08 18:48:55.548080T1621967203918165956",
+                "Access-Control-Allow-Origin": "*"
             },
             success: function(result) {
                 console.log("I guess we called the API?")
