@@ -10,7 +10,7 @@ $( document ).ready(function() {
             type: "GET",
             headers: {
                 "climber_id": "2021-06-08 18:48:55.548080T1621967203918165956",
-                "Access-Control-Allow-Origin": "*"
+                "Access-Control-Allow-Origin": "http://senddbbucket.s3-website-us-east-1.amazonaws.com"
             },
             success: function(result) {
                 console.log("I guess we called the API?")
