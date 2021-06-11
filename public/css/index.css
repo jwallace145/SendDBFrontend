@@ -1,0 +1,7 @@
+.half-dome {
+    height: 100vh;
+    background-image: url('../media/half-dome.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
