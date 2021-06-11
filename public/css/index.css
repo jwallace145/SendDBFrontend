@@ -5,3 +5,15 @@
     background-position: center;
     background-repeat: no-repeat;
 }
+
+.form-container {
+    background-color: lightgray;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.senddb-title {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 48px;
+}
