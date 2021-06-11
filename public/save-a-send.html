@@ -27,10 +27,10 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="create-climber.html">Create a Climber<span class="sr-only">(current)</span></a>
-        </li>
         <li class="nav-item">
+          <a class="nav-link" href="create-climber.html">Create a Climber</a>
+        </li>
+        <li class="nav-item active">
           <a class="nav-link" href="save-a-send.html">Save a Send</a>
         </li>
       </ul>
@@ -41,7 +41,46 @@
     </div>
   </nav>
   <div class="container">
-    <img src="media/half-dome.jpeg" alt="half dome" height="800px" width="1200px">
+    <form>
+      <div class="form-group">
+        <label>Climber Email</label>
+        <input class="form-control" id="climber-email" placeholder="alexhonnold69@senddb.com">
+        <small class="form-text text-muted">hehe</small>
+
+        <label>Route</label>
+        <input class="form-control" id="route" placeholder="Essence">
+        <small class="form-text text-muted">Nice send brah</small>
+
+        <label>Grade</label>
+        <input class="form-control" id="grade" placeholder="5.10c">
+        <small class="form-text text-muted">The grade of the send</small>
+
+        <label>Type</label>
+        <input class="form-control" id="type" placeholder="Sport">
+        <small class="form-text text-muted">The type of send</small>
+
+        <label>Crag</label>
+        <input class="form-control" id="crag" placeholder="New River Gorge">
+
+        <label>Style</label>
+        <input class="form-control" id="style" placeholder="Lead">
+        <small class="form-text text-muted">The style of the send: Lead, Toprope, Follow</small>
+
+        <label>Ascent</label>
+        <input class="form-control" id="ascent" placeholder="Flash">
+        <small class="form-text text-muted">The type of asent: Flash, Onsight, Redpoint, Fell/Hung</small>
+
+        <label>Height</label>
+        <input class="form-control" id="height" placeholder="20m">
+        <small class="form-text text-muted">The style of the send: Lead, Toprope, Follow</small>
+
+        <label>Pitches</label>
+        <input class="form-control" id="pitches" placeholder="1">
+        <small class="form-text text-muted">The type of asent: Flash, Onsight, Redpoint, Fell/Hung</small>
+
+      </div>
+      <button id="save-a-send-btn" type="button" class="btn btn-primary">Save a Send</button>
+    </form>
   </div>
 
   <!-- Custom JavaScript -->

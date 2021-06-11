@@ -1,7 +1,6 @@
 $( document ).ready(function() {
     $( "#create-climber" ).click(function(event) {
         event.preventDefault();
-        ``
         console.log("the create climber button was clicked")
         const email = $( "#email" ).val()
         const username = $( "#username" ).val()

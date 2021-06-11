@@ -41,12 +41,32 @@
     </div>
   </nav>
   <div class="container">
-    <img src="media/half-dome.jpeg" alt="half dome" height="800px" width="1200px">
+    <form>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter email">
+        <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label>Username</label>
+        <input class="form-control" id="username" placeholder="Enter Username">
+        <small class="form-text text-muted">Pick a sick username brah</small>
+      </div>
+      <div class="form-group">
+        <label>First Name</label>
+        <input class="form-control" id="firstname" placeholder="First Name">
+      </div>
+      <div class="form-group">
+        <label>Last Name</label>
+        <input class="form-control" id="lastname" placeholder="Last Name">
+      </div>
+      <button id="create-climber" type="button" class="btn btn-primary">Create Climber</button>
+    </form>
   </div>
 
   <!-- Custom JavaScript -->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script src="./js/save-a-send.js"></script>
+  <script src="./js/script.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js"
     integrity="sha512-otOZr2EcknK9a5aa3BbMR9XOjYKtxxscwyRHN6zmdXuRfJ5uApkHB7cz1laWk2g8RKLzV9qv/fl3RPwfCuoxHQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
