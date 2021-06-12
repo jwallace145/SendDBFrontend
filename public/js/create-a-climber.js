@@ -28,7 +28,15 @@ $( document ).ready(function() {
                 console.log(error)
             }
         })
-        
-    });
+
+        stufftoadd = `<div class="alert alert-info alert-dismissible" role="alert">
+        Congratulations! You just joined a <strong>sick</strong> database of climbers!
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>`
+    
+        $( "#form-container" ).prepend(stufftoadd)
+    })
 });
 

@@ -39,5 +39,14 @@ $( document ).ready(function() {
                 console.log(error)
             }
         })
+
+        stufftoadd = `<div class="alert alert-info alert-dismissible" role="alert">
+        Nice! You just recorded a <strong>send</strong> brah. Climb on.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>`
+    
+        $( "#form-container" ).prepend(stufftoadd)
     })
 })
