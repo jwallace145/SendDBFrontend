@@ -1,52 +1,81 @@
-$( document ).ready(function() {
-    $( "#save-a-send-btn").click(function(event) {
+$(document).ready(function () {
+    $("#save-a-send-btn").click(function (event) {
         event.preventDefault();
 
-        console.log("you just tried to save a send bruh")
+        console.log("you just tried to save a send bruh");
 
-        const climberEmail = $( "#climber-email" ).val()
-        const route = $( "#route" ).val()
-        const grade = $( "#grade" ).val()
-        const type = $( "#type" ).val()
-        const crag = $( "#crag" ).val()
-        const style = $( "#style" ).val()
-        const ascent = $( "#ascent" ).val()
-        const height = $( "#height" ).val()
-        const pitches = $( "#pitches" ).val()
+        // get form values
+        const climberEmail = $("#climber-email").val();
+        const route = $("#route").val();
+        const grade = $("#grade").val();
+        const type = $("#type").val();
+        const crag = $("#crag").val();
+        const style = $("#style").val();
+        const ascent = $("#ascent").val();
+        const height = $("#height").val();
+        const pitches = $("#pitches").val();
 
-        const URL = "https://b1rzvmzxb5.execute-api.us-east-1.amazonaws.com/dev/routes"
+        // set the headers
+        const headers = {
+            "climber_email": climberEmail,
+            "name": route,
+            "grade": grade,
+            "type": type,
+            "crag": crag,
+            "style": style,
+            "ascent": ascent,
+            "height": height,
+            "pitches": pitches
+        }
+
+        // send db processor url
+        const url = "https://b1rzvmzxb5.execute-api.us-east-1.amazonaws.com/dev/routes";
 
         $.ajax({
-            url: URL,
+            url: url,
             type: "POST",
-            headers: {
-                "climber_email": climberEmail,
-                "name": route,
-                "grade": grade,
-                "type": type,
-                "crag": crag,
-                "style": style,
-                "ascent": ascent,
-                "height": height,
-                "pitches": pitches
+            headers: headers,
+            success: function (data, status, xhr) {
+                successCallback(data, status, xhr);
             },
-            success: function(result) {
-                console.log("create route successful")
-                console.log(result)
-            },
-            error: function(error) {
-                console.log("create route failed bad baddddd")
-                console.log(error)
+            error: function (data, status, xhr) {
+                errorCallback(data, status, xhr);
             }
         })
-
-        stufftoadd = `<div class="alert alert-info alert-dismissible" role="alert">
-        Nice! You just recorded a <strong>send</strong> brah. Climb on.
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>`
-    
-        $( "#form-container" ).prepend(stufftoadd)
     })
 })
+
+function successCallback(data, status, xhr) {
+    console.log("this tha success call back dawg");
+
+    // get http status code
+    const httpStatus = xhr.status;
+
+    // determine alert to append
+    var alert;
+    if (httpStatus == "200") {
+        alert = `<div class="alert alert-danger alert-dismissible" role="alert">
+                    We couldn't save that route, sorry <strong>:/</strong>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>`;
+    } else if (httpStatus == "201") {
+        alert = `<div class="alert alert-info alert-dismissible" role="alert">
+                    Nice! You just recorded a <strong>send</strong> brah. Climb on.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>`;
+    }
+
+    // prepend alert
+    $("#form-container").prepend(alert);
+}
+
+function errorCallback(data, status, xhr) {
+    console.log("this tha error callback bro");
+}
+
+
+
