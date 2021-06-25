@@ -31,6 +31,7 @@ $(document).ready(function () {
         // send db processor url
         const url = "https://b1rzvmzxb5.execute-api.us-east-1.amazonaws.com/dev/routes";
 
+        // make ajax request
         $.ajax({
             url: url,
             type: "POST",
